@@ -7,11 +7,10 @@
 // 	})
 // })
 
-angular.module('fickle', ['ngMaterial', 'ngRoute'])
-	.config(function ($stateProvider){
+angular.module('fickle', ['ngMaterial', 'ngRoute', 'fickle.search'])
+	.config(function ($routeProvider){
 		$stateProvider
-    .state('/', {
-      url: "/search",
+    .when('/', {
       templateUrl: "Search/search.html",
       controller: 'searchController'
     });
