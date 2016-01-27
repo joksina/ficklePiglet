@@ -15,10 +15,12 @@ app.listen(port, function(){
 require('../server/config/middleware.js')(app, express);
 require('../server/config/routes.js')(app, express);
 
+
+//scraper.scrapeFile("podcasts.txt")
 // scraper.getAllPodcast("podcasts.txt")
 
 // setTimeout(function(){
-//      scraper.readAllFiles();
+//     scraper.readAllFiles();
 // }, 10000)
 
 
