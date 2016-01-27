@@ -8,7 +8,7 @@ module.exports = {
         if (err) {
           throw error;
         } else  {
-          console.log('i')
+          // console.log('i')
           res.send(result.data);
         }
        })

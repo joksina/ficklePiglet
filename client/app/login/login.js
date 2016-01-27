@@ -15,7 +15,7 @@ angular.module('fickle.auth', [])
       console.log("Attempting to login", userData)
       Auth.signin(JSON.stringify($scope.user))
         .then(function(message){
-          $window.localStorage.setItem('com.fickle', message);
+          // $window.localStorage.setItem('com.fickle', message);
           $location.path('/search');
         })
         .catch(function (error) {

@@ -6,8 +6,9 @@
         <fieldset class="standard">
           <div layout="row" layout-wrap="" flex="">
             <div flex="50" ng-repeat="item in items">
-            <br><br>
+            <br>
              <div ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+             &nbsp<label><input type="checkbox"></label>
                 {{ item }} <span ng-if="exists(item, selected)">selected</span>
             </div>
           </div>
