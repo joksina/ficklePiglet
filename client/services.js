@@ -28,6 +28,7 @@ angular.module('fickle.services', [])
     };
 })
 
+
 .factory('Podcasts', function ($http, $location, $window) {
   var resources = [];
     var getTags = function () {
