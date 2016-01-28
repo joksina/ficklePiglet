@@ -5,12 +5,14 @@
       <div>
         <fieldset class="standard">
           <div layout="row" layout-wrap="" flex="">
-            <div flex="50" ng-repeat="tag in tags">
-            <br><br>
-             <div ng-checked="exists(tag, selected)" ng-click="toggle(tag, selected)">
-                {{ tag.name }} <span ng-if="exists(tag, selected)">selected</span>
+            <div flex="50" ng-repeat="item in items">
+            <br>
+             <div ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+             &nbsp<label><input type="checkbox"></label>
+                {{ item }} <span ng-if="exists(item, selected)">selected</span>
             </div>
           </div>
+          <button ng-submit=''>Submit</button>
         </fieldset>
       </div>
     </div>
@@ -19,4 +21,4 @@
       <code style="display: block; padding: 8px; color: grey">{{selected | json}}</code>
     </div>
   </div>
-</div> -->
+</div>

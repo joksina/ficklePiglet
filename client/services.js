@@ -38,8 +38,16 @@ angular.module('fickle.services', [])
             return resp.data;
           });
     };
-    var getPodcasts = function () {
+    var getPodcasts = function (data) {
       // TO DO AJ
+      return $http({
+        method: 'POST',
+        url: '/resources',
+        data: data
+      })
+      .then(function (resp) {
+        resp.data;
+      });
     };
 
     return {
