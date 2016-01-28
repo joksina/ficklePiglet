@@ -12,11 +12,13 @@
                 {{ item }} <span ng-if="exists(item, selected)">selected</span>
             </div>
           </div>
-          <button ng-submit=''>Submit</button>
+          <form >
+          <a href='#/resource'><button ng-click='sendTags()'>test</button></a>
+          </form>
         </fieldset>
       </div>
     </div>
-<!--     <div flex="100">
+ <div flex="100">
       <h2 class="md-title">Selected Items</h2>
       <code style="display: block; padding: 8px; color: grey">{{selected | json}}</code>
     </div>

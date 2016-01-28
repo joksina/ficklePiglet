@@ -29,6 +29,7 @@ angular.module('fickle.services', [])
 })
 
 .factory('Podcasts', function ($http, $location, $window) {
+  var resources = [];
     var getTags = function () {
        return $http({
             method: 'GET',
@@ -38,20 +39,25 @@ angular.module('fickle.services', [])
             return resp.data;
           });
     };
-    var getPodcasts = function (data) {
+    var getPodcasts = function (resource) {
       // TO DO AJ
       return $http({
         method: 'POST',
-        url: '/resources',
-        data: data
+        url: '/getResource',
+        data: resource
       })
       .then(function (resp) {
-        resp.data;
+        resources = resp.data;
       });
+      
     };
+    var GetRec = function (callback) {
+        callback(resources);
+    }
 
     return {
       getTags: getTags,
       getPodcasts: getPodcasts,
+      GetRec: GetRec
     };
 });

@@ -14,13 +14,13 @@ module.exports = {
     },
     getResource: function(req, res){
         //TODO: Write getResource function. Keyword is just placeholder
-
-        var keyword = req || ["Math", "Science"];
+        var keyword = req.body
+        // console.log(keyword);
         keyword = JSON.stringify(keyword);
         //This is a map of the array not a filter
         db.cypherQuery("MATCH (n:Resource)-[:TAGGED]-(t:Tag) WHERE t.name IN "+keyword+" RETURN n", function(err, query){
             // console.log("ERROR: ", err)
-            // console.log("HARHARHAR", res)
+            // console.log("HARHARHAR", query)
             //Return's Array of Resource Objects
             res.send(query.data);
         });

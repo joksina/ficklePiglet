@@ -3,6 +3,21 @@ angular.module('fickle.search',['ngMaterial', 'ngMessages'])
 .controller('searchController', function($scope, $location, Podcasts) {
   $scope.items = ['Science', 'Technology', 'Engineering', 'Math'];
     $scope.selected = [];
+    $scope.tags = [];
+    
+    Podcasts.getTags().then(function (data) {
+      $scope.tags = data;
+    });
+
+    $scope.sendTags = function() {
+      Podcasts.getPodcasts($scope.selected).then(function () {
+        
+      });
+    }
+
+    Podcasts.GetRec(function(data){
+        $scope.results = data
+    })  
 
     $scope.toggle = function (item, list) {
       var idx = list.indexOf(item);
@@ -13,8 +28,8 @@ angular.module('fickle.search',['ngMaterial', 'ngMessages'])
     $scope.exists = function (item, list) {
       return list.indexOf(item) > -1;
     };
+  // $scope.submit = function () {
+  //   $location.path('/resource');
+  // }
 
-    $scope.submit = function (item) {
-      
-    }
 });

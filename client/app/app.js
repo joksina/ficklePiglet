@@ -1,4 +1,4 @@
-angular.module('fickle', ['fickle.auth', 'fickle.services', 'fickle.search','ui.router'])
+angular.module('fickle', ['fickle.auth', 'fickle.services', 'fickle.search', 'ui.router'])
 .config(function ($stateProvider, $urlRouterProvider) {
 
  $urlRouterProvider.otherwise("/search");
@@ -12,5 +12,10 @@ angular.module('fickle', ['fickle.auth', 'fickle.services', 'fickle.search','ui.
      url: "/login",
      templateUrl: "/app/login/login.html",
      controller: 'AuthController'
+   })
+   .state('resource', {
+    url: '/resource',
+    templateUrl: '/app/Search/resource.html',
+    controller: 'searchController'
    })
 })
